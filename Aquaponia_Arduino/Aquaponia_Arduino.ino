@@ -1,8 +1,4 @@
-//Thermistor
-//  #include <Thermistor.h>
-//  Thermistor temp(A0); 
-//  int temperatura;
-//  void medeTemperatura();
+//Inclusões de bibliotecas e declaração de variáveis e funções
 
 //DS18B20
   #include <OneWire.h>
@@ -20,12 +16,6 @@
   void medeTDS();
   #define pinoSensorTDS A4
 
-//Turbidez
-//  #define pinoSensorTurbidez A7
-//  float voltagemTurbidez;
-//  float turbidez;
-//  void medeTurbidez();
-
 //PH
   #define pinoSensorPH A2
   float valor_calibracao = 21.34;
@@ -33,45 +23,38 @@
   int medidas[10],aux;
   float PH;
   void medePH();
-    
-//Serial
-  void monitorSerial();
 
-    
 //Envio pro ESP
   String textoEnvio;
   void enviarParaESP();
     
-
 int delayMedidas = 1000;
 
 void setup() {
   Serial.begin(9600); 
 
-  //TDS
+  //Inicializa a biblioteca de mediçaõ do TDS
   gravityTDS.setPin(pinoSensorTDS);
   gravityTDS.setAref(5.0);
   gravityTDS.setAdcRange(1024); 
   gravityTDS.begin();
 
-  //DS18B20
+  //Inicializa a biblioteca de temperatura
   barramento.begin();
   barramento.getAddress(sensor, 0);  
 
   delay(1000); 
 }
+
 void loop() {
   static unsigned long medidasAnterior;
     
   if(millis() - medidasAnterior > delayMedidas){
-    enviarParaESP();
 
-    //medeTemperatura();
     medeTemperatura();
     medePH();
-   // medeTurbidez();
     medeTDS();
-    
+    enviarParaESP();
     
     medidasAnterior = millis();
   }

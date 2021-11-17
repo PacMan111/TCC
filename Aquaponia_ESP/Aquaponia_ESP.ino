@@ -3,25 +3,21 @@
 String textoRecebido;
 
 String temperatura;
-//String temperaturaDS;
 String TDS;
-//String Turbidez;
 String PH;
 
 //WIFI
-String ssid       = "AAA";
+String ssid       = "VIRUS";
 String password   = "6SCJ2013";
 int ContaFaltaWifi;
 
 void lerSerial();
-void destrinchaSerial();
 void enviarDados();
 void checaWifi();
-void reset();
 
 void setup() {
 
-  WiFi.begin(ssid, password);
+  WiFi.begin(ssid, password); //Conecta ao WiFi
 
   Serial.begin(9600);
  
@@ -43,6 +39,5 @@ void loop() {
   }
 
   checaWifi();
-  reset();
   
 }

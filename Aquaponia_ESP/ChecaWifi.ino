@@ -2,37 +2,27 @@ void checaWifi(){
 
 static unsigned long ChecaWifiAnterior;
 
-if (millis() - ChecaWifiAnterior > 120000){
-
-
-if (WiFi.status() != WL_CONNECTED ) {
+  if (millis() - ChecaWifiAnterior > 120000){
     
-    WiFi.begin(ssid, password);
-    Serial.println("Tentando Conectar WIFI");
-    ContaFaltaWifi++;
+    if (WiFi.status() != WL_CONNECTED ) {
     
-    } // if
-
-else if (WiFi.status() == WL_CONNECTED ){
-    Serial.println("WIFI está conectado ");
-    ContaFaltaWifi = 0;
-
-    } // else if
-
-
-  ChecaWifiAnterior = millis();
-  } // if millis
-
-
-  
-} // void
-
-
-void reset(){
-  if (ContaFaltaWifi > 4){
-
-  Serial.println("Acho que vou resetar, wifi não fala comigo... ");
-  ESP.restart();
-
+      WiFi.begin(ssid, password);
+      Serial.println("Tentando Conectar WIFI");
+      ContaFaltaWifi++;
+    
+    }else if (WiFi.status() == WL_CONNECTED ){
+      Serial.println("WIFI está conectado ");
+      ContaFaltaWifi = 0;
+    
+    }
+    
+    
+    ChecaWifiAnterior = millis();
   }
+  
+  if (ContaFaltaWifi > 4){
+    Serial.println("Falha ao conectar ao WiFi, resentando a placa");
+    ESP.restart();
+  }
+  
 }
