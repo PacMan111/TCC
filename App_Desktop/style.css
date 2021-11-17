@@ -1,0 +1,27 @@
+.grafico{
+    width: 90%;
+    height: 60%;
+}
+
+.horizontalAlign{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.box{
+    width: 50%;
+    flex-basis: 40%;
+    background-color: rgb(199, 232, 243);
+    border-radius: 15px;
+
+    margin: 5px;
+    padding: 5px;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "aquaponia",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {
+    "chart.js": "^3.5.0",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "electron": "^9.1.1",
+    "electron-builder": "^22.8.0",
+    "node-fetch": "^2.6.1"
+  },
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": "LuizGustavo",
+  "license": "MIT",
+  "build": {
+    "appId": "com.aquaponia",
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+        <title>Aquaponia</title>
+    </head>
+    <link rel="stylesheet" href="style.css">
+    <body>
+        <h1>Aquaponia</h1>
+
+        <p id="horario">Última Atualização: </p>
+
+        <main class="content">
+
+            <div class="box">
+                <p>Temperatura da água: <span id="tempAgua"></span></p>
+                <p>PH: <span id="ph"></span></p>
+                <p>Turbidez: <span id="turbidez"></span></p>
+                <p>Total de Sólidos Dissolvidos: <span id="tds"></span></p>
+                <p>Condutividade Elétrica: <span id="condEletrica"></span> </p>
+            </div>
+
+            <div class="box">
+                <div class="grafico">
+                    <canvas id="graficoTemperatura"></canvas>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="grafico">
+                    <canvas id="graficoPH"></canvas>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="grafico">
+                    <canvas id="graficoCondutividade_TDS"></canvas>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="grafico">
+                    <canvas id="graficoTurbidez"></canvas>
+                </div>
+            </div>
+
+        </main>
+        
+        <script src="graficos.js">
+        </script>
+    </body>
+</html>
