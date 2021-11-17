@@ -18,7 +18,7 @@
 
 //PH
   #define pinoSensorPH A2
-  //float valor_calibracao = 21.34;
+  float valor_calibracao = 21.34;
   unsigned long int media; 
   int medidas[10],aux;
   float PH;
