@@ -13,14 +13,12 @@ static unsigned long ChecaWifiAnterior;
     }else if (WiFi.status() == WL_CONNECTED ){
       Serial.println("WIFI está conectado ");
       ContaFaltaWifi = 0;
-    
     }
-    
     
     ChecaWifiAnterior = millis();
   }
   
-  if (ContaFaltaWifi > 4){
+  if (ContaFaltaWifi > 5){
     Serial.println("Falha ao conectar ao WiFi, resentando a placa");
     ESP.restart();
   }

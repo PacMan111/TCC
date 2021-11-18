@@ -20,7 +20,6 @@ void enviarDados(){
         client.println("Host: docs.google.com");//-
         client.println();//-
         client.stop();//Encerramos a conexao com o servidor
-
     }
 
     delay(1000);
