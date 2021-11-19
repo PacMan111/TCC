@@ -1,5 +1,5 @@
-const url = "https://script.google.com/macros/s/AKfycbz3LNO6KmwctGSD-M6JvUuOSc8OkHXSK7ibzFJYBls9rmR7ayyJLYvwvbZZ3oJRxMUH/exec";
 const fetch = require('node-fetch');
+const url = "https://script.google.com/macros/s/AKfycbz3LNO6KmwctGSD-M6JvUuOSc8OkHXSK7ibzFJYBls9rmR7ayyJLYvwvbZZ3oJRxMUH/exec";
 
 var Chart = require('chart.js');
 
@@ -80,7 +80,7 @@ function getDados(){
     let settings = {
         method: "Get",
         redirect: 'follow',
-     };
+    };
    
     fetch(url, settings)
     .then(res => {
@@ -132,7 +132,7 @@ loop()
 
 setInterval(() => {
     loop()
-}, 30000)
+}, 60000)
 
 function loop(){
     getDados()
